@@ -58,5 +58,3 @@ if example:
         example = False
     else:
         pass
-
-
