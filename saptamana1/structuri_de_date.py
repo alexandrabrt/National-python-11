@@ -1,11 +1,11 @@
 # structuri de date
 
 # LISTE - ordonate (pot fi indexate) / mutabile (poate fi modificat)
-my_list = [8, 2, 'a', 8, '4']
+# my_list = [8, 2, 'a', 8, '4']
 # var = my_list.pop(0)
-my_list.remove(8)
+# my_list.remove(8)
 # my_list = []
-my_list.clear()
+# my_list.clear()
 # print(var)
 # print(my_list)
 # my_list.pop()
@@ -109,9 +109,52 @@ my_list.clear()
 
 
 # FOR
-list_a = []
-list_1 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-for i in list_1:
-    i += 1
-    list_a.append(i)
-print(list_a)
+# list_a = []
+# list_1 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+# for i in list_1:
+#     i += 1
+#     list_a.append(i)
+# print(list_a)
+
+# my_var = 7
+# mesaj = None
+# if my_var < 6:
+#     mesaj = "Set instructiuni #1"
+# else:
+#     mesaj = "Set instructiuni #2"
+# mesaj = "Set instructiuni #1" if my_var < 6 else "Set instructiuni #2" # operator ternar
+# mesaj = "Set instructiuni #2"
+# if not my_var < 6 and (mesaj := my_var):
+#     print(mesaj)
+# if 'Set' in mesaj:
+#     print('exista')
+# print(my_var, mesaj)
+# a = 1
+# b = 2
+# impartire = 0
+# if a > 0 and b > 0 and (impartire := a / b) and impartire > 1:
+# if a > 0 and b > 0 and a / b > 1:
+#     impartire = a / b
+#     print(impartire)
+# print(impartire)
+# sir = "Ana are mere"
+# sir1 = list(sir)
+# print(sir1)
+# for i, v in enumerate(sir1):
+#     print(v, '=>>', i)
+# [2: len(sir): 3]
+# for variabila_temporara in range(0, len(sir1)):
+#     print(variabila_temporara, '=>>', sir1[variabila_temporara])
+# dictionar = {'1': 'val1', "2": "val2", "3": "val3"}
+# print(dictionar["2"])
+# print(dictionar.get("4"))
+# dictionar.update({4: "val4"})
+# dictionar[6] = 'val5'
+# dictionar.update({"3": 'val300'})
+# for i in dictionar.items():
+    # print(i, '=>>')
+    # index, value = i
+    # print(i, index, '=>>', value)
+# for i in dictionar:
+#     print(i, '->>', dictionar[i])
+# print(dictionar)
