@@ -56,18 +56,31 @@ def suma(a, b, c = 3, *args, **dublu_steluta):
 # print(var1)
 
 my_var = input('Adauga un numar: ')
+if my_var.isdigit():
+    my_var = int(my_var)
+variabila_nedefinita = None
+if variabila_nedefinita is not None:
+    print(variabila_nedefinita)
+    variabila_nedefinita = 0
+print('s-a rulat programul')
+
 try:
+    # if my_var.isdigit():
     my_int = int(my_var)
     print(my_int)
+    # variabila_nedefinita = None
     print(variabila_nedefinita)
+
 except NameError:
     print('variabila nu este definita')
     variabila_nedefinita = 0
 except ValueError:
     print('eroare de valoare')
 except Exception as e:
-    print('exceptie', Exception)
+    print('exceptie', e)
 else:
     print('nu sunt exceptii')
+finally:
+    print('s-a rulat programul')
 
 # print(variabila_nedefinita)
