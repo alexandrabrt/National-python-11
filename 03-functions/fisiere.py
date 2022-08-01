@@ -16,9 +16,10 @@
 # with open('data2.txt', 'w') as file:
 #     file.write('hello2')
 
-# with open('data1.txt', 'r') as file:
-#     for line in file.readlines():
-#         print(line)
+with open('data1.txt', 'r') as file:
+    print(file.readlines())
+    # for line in file.readlines():
+    #     print(line)
 
 # with open('data.txt', 'r') as file:
 #     # print(list(file))
@@ -32,19 +33,19 @@
 #             break
 #         print(line)
 
-import csv
+# import csv
 
 # with open('fisiercsv.csv', 'r') as csv_file:
 #     rows = csv.reader(csv_file, delimiter=',')
 #     for row in rows:
 #         print(row)
 
-new_cars = [
-    ['Dacia', 'Logan', 2005, 75],
-    ['Renault', 'Clio', 2005, 75]
-]
-with open('fisiercsv.csv', 'a') as csv_file:
-    csv_writer = csv.writer(csv_file, delimiter=',')
-    for new_car in new_cars:
-        print(new_car)
-        csv_writer.writerow(new_car)
+# new_cars = [
+#     ['Dacia', 'Logan', 2005, 75],
+#     ['Renault', 'Clio', 2005, 75]
+# ]
+# with open('fisiercsv.csv', 'a') as csv_file:
+#     csv_writer = csv.writer(csv_file, delimiter=',')
+#     for new_car in new_cars:
+#         print(new_car)
+#         csv_writer.writerow(new_car)
