@@ -1,0 +1,17 @@
+#alt_tabel {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+#tabel_preferat {
+    border: 2px solid green;
+    /*border-collapse: collapse;*/
+}
+.scris_italic {
+     border: 2px solid red;
+    border-collapse: collapse;
+    font-style: italic;
+    font-size: large;
+}
+#culoare_rosie {
+    color: red;
+}
