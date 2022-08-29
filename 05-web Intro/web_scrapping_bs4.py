@@ -51,7 +51,8 @@ del dataset[0]
 # print(dataset, 'body')
 df = pd.DataFrame(dataset, columns=header_list, index=range(1, 11))
 print(df)
-with ExcelWriter('CursBNR.xlsx') as writer:
-    df.to_excel(writer, index=0)
+# with ExcelWriter('CursBNR.xlsx') as writer:
+#     df.to_excel(writer, index=0)
 # df.to_excel("CursBNR.xls", header=header_list, index=0)
 # print(header_list)
+df.to_excel('CursBnrBISbs.xlsx', header=header_list)

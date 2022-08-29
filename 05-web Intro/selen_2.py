@@ -3,7 +3,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 import pandas as pd
-from pandas import ExcelWriter
+# from pandas import ExcelWriter
 
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 driver.get('https://www.bnr.ro/files/xml/nbrfxrates2021.htm')
@@ -14,6 +14,7 @@ table_body = driver.find_element(by=By.XPATH, value='//*[@id="Data_table"]/table
 # print(table_body.text)
 
 header = table_head.text.split('\n')
+print(header)
 body = table_body.text.split('\n')
 
 # print(header)
@@ -40,7 +41,10 @@ counter = 0
 for j in body:
     body_columns[counter % body_columns_list].append(j)
     counter += 1
+print(body_columns)
+
 
 df = pd.DataFrame(body_columns)
-with ExcelWriter('TABEL_2_BNR_2021.xlsx') as writer:
-    df.to_excel(writer, header=header, index=0)
+df.to_excel("CursBnrbis.xls", header=header)
+# with ExcelWriter('TABEL_2_BNR_2021.xlsx') as writer:
+#     df.to_excel(writer, header=header, index=0)
