@@ -1,11 +1,30 @@
+# object name = obiect_calculator
+# class name = Calculator
+# property =
+# activity = adunare, scadere, inmultire, impartire
 class Calculator:
 
-    # operator_2_bis = 0
-
     def __init__(self):
-        self.operator_1 = float(input('Alege primul numar: '))
-        self.operator_2 = float(input('Alege al doilea numar: '))
-        self.semn = input('Alege semn: ')
+        self.operator_1 = self.validate_string(input('Alege primul numar: '))
+        self.operator_2 = self.validate_string(input('Alege al doilea numar: '))
+        self.semn = self.validate_sign(input('Alege semn: '))
+        if self.operator_2 == 0.0 and self.semn == '/':
+            self.operator_2 = self.validate_zero_division()
+
+    def validate_string(self, operator):
+        while operator.isdigit() is False:
+            operator = input("Alege din nou numarul: ")
+        return float(operator)
+
+    def validate_sign(self, semn):
+        while semn not in ['+', '-', '*', '/']:
+            semn = input('Alege semn: ')
+        return semn
+
+    def validate_zero_division(self):
+        while self.operator_2 == 0.0:
+            self.operator_2 = float(input('Alege din nou al doilea numar: '))
+        return self.operator_2
 
     def adunare(self):
         return self.operator_1 + self.operator_2
@@ -17,11 +36,6 @@ class Calculator:
         return self.operator_1 * self.operator_2
 
     def impartire(self):
-        while self.operator_2 == 0.0:
-            self.operator_2 = float(input('Alege din nou al doilea numar: '))
-            if self.operator_2 != 0.0:
-                break
-        print(self.operator_2, '22')
         return self.operator_1 / self.operator_2
 
     def __str__(self):
@@ -32,7 +46,6 @@ class Calculator:
         elif self.semn == '*':
             return f"{self.operator_1} {self.semn} {self.operator_2} = {self.inmultire()}"
         elif self.semn == '/':
-            print(self.operator_2, '33')
             return f"{self.operator_1} {self.semn} {self.operator_2} = {self.impartire()}"
         else:
             return 'Operatia nu exista'
