@@ -97,22 +97,64 @@
 # str1 += 'mari'
 # print(str1 == str2, str1 is str2)
 
-class SuperClasa:
+# class SuperClasa:
+#     def __init__(self, name):
+#         self.name = name
+#
+#     def __str__(self):
+#         return f'Numele meu este {self.name}'
+#
+#
+# class SubClasa(SuperClasa):
+#     def __init__(self, name):
+#         SuperClasa.__init__(self, name)
+#         # self.name = name
+#
+#     # def __str__(self):
+#     #     return self.name
+#
+#
+# obiect = SubClasa("Alexandra")
+# print(obiect)
+
+class Super:
+
+    super_variabila = 'super'
+    sub_variabila = 'sub_parinte'
+
     def __init__(self, name):
-        self.name = name
+        self.nume = name
+        self.variabila = 13
 
     def __str__(self):
-        return f'Numele meu este {self.name}'
+        return f"Numele meu este {self.nume}"
 
 
-class SubClasa(SuperClasa):
-    def __init__(self, name):
-        SuperClasa.__init__(self, name)
-        # self.name = name
+class Mijloc:
 
-    # def __str__(self):
-    #     return self.name
+    variabila_mijloc = 3
+    # super_variabila = 'mijloc'
+
+    # def __init__(self):
+    #     self.variabila = 11
 
 
-obiect = SubClasa("Alexandra")
+class Sub(Super, Mijloc):
+
+    sub_variabila = 'sub'
+    # super_variabila = 'super_copil'
+
+    def __init__(self, prenume):
+        # super().__init__(name=prenume)
+        super().__init__(prenume)
+        self.prenume = prenume
+        # self.variabila = 12
+
+    def __str__(self):
+        return f"Prenumele meu este {self.prenume}"
+
+
+# obiect = Sub("PETRE")
+obiect = Sub("Lavinia")
+# print(obiect.super_variabila)
 print(obiect)
