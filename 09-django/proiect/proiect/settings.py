@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'proiect.middleware.RefreshMiddleware',
 ]
 
 ROOT_URLCONF = 'proiect.urls'
@@ -123,3 +124,5 @@ STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = '/locations/'
 LOGOUT_REDIRECT_URL = '/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
