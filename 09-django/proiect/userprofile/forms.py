@@ -16,3 +16,10 @@ class NewAccountForm(forms.ModelForm):
             'username': TextInput(attrs={'placeholder': 'username', 'class': 'form-control'}),
         }
 
+    def clean(self):
+        field_data = self.cleaned_data
+        email_value = field_data.get('email')
+        if User.objects.filter(email=email_value).exists():
+            msg = "Emailul deja exista! Te rugam sa adaugi un alt email"
+            self._errors['email'] = self.error_class([msg])
+        return field_data

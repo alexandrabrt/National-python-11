@@ -19,6 +19,10 @@ class CreateNewAccount(LoginRequiredMixin, CreateView):
     template_name = 'aplicatie1/locations_form.html'
     form_class = NewAccountForm
 
+    def form_invalid(self, form):
+        print(form.errors.as_json())
+        return super().form_invalid(form)
+
     def get_success_url(self):
         psw = ''.join(random.SystemRandom().choice(string.ascii_uppercase + string.ascii_lowercase +
                                                    string.digits + '!$%?#@') for _ in range(8))
